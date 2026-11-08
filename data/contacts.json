@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Elavarasi M",
+    "phone": "917904925991",
+    "email": "",
+    "group": "Java",
+    "tags": [],
+    "status": "active",
+    "notes": "Pay the reminder fees",
+    "createdAt": "2026-10-23T12:31:22.108Z",
+    "_id": "local_1792758682108_szduy"
+  },
+  {
+    "name": "Test New",
+    "phone": "919876543210",
+    "email": "",
+    "group": "General",
+    "tags": [],
+    "status": "active",
+    "notes": "",
+    "createdAt": "2026-10-23T11:40:01.557Z",
+    "_id": "local_1792755601558_mn6sa"
+  },
+  {
+    "name": "Aravind Kumar",
+    "phone": "919876543210",
+    "email": "aravind@example.com",
+    "group": "Full Stack Batch",
+    "tags": [
+      "Student",
+      "2024"
+    ],
+    "status": "active",
+    "notes": "Batch A - Morning",
+    "createdAt": "2026-10-21T10:44:12.466Z",
+    "_id": "local_1"
+  },
+  {
+    "name": "Priya Dharshini",
+    "phone": "919876543211",
+    "email": "priya.d@example.com",
+    "group": "Python Automation",
+    "tags": [
+      "Student",
+      "Weekend"
+    ],
+    "status": "active",
+    "notes": "Batch B - Evening",
+    "createdAt": "2026-10-21T10:44:12.466Z",
+    "_id": "local_2"
+  },
+  {
+    "name": "Karthik Raja",
+    "phone": "919876543212",
+    "email": "karthik.raja@example.com",
+    "group": "New Enquiries",
+    "tags": [
+      "Lead",
+      "WhatsApp Web"
+    ],
+    "status": "active",
+    "notes": "Inquired about Stack Queue classes",
+    "createdAt": "2026-10-21T10:44:12.466Z",
+    "_id": "local_3"
+  },
+  {
+    "name": "Sneha Murugan",
+    "phone": "919876543213",
+    "email": "sneha.m@example.com",
+    "group": "Full Stack Batch",
+    "tags": [
+      "Student"
+    ],
+    "status": "active",
+    "notes": "Completed React module",
+    "createdAt": "2026-10-21T10:44:12.466Z",
+    "_id": "local_4"
+  },
+  {
+    "name": "Vignesh Sundar",
+    "phone": "919876543214",
+    "email": "vignesh.s@example.com",
+    "group": "New Enquiries",
+    "tags": [
+      "Lead"
+    ],
+    "status": "active",
+    "notes": "Follow up for next demo session",
+    "createdAt": "2026-10-21T10:44:12.466Z",
+    "_id": "local_5"
+  }
+]

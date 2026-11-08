@@ -1,0 +1,39 @@
+{
+  "name": "whatsapp-automation",
+  "version": "1.0.0",
+  "description": "Stack Queue WhatsApp Automation React Native Mobile App",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "concurrently -n \"SERVER,MOBILE\" -c \"blue,magenta\" \"npm run server\" \"npm run mobile\"",
+    "server": "node backend/server.js",
+    "mobile": "npm start --prefix mobile-app -- --clear",
+    "mobile:android": "npm run android --prefix mobile-app",
+    "mobile:ios": "npm run ios --prefix mobile-app",
+    "client": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend"
+  },
+  "keywords": [
+    "react-native",
+    "expo",
+    "whatsapp",
+    "automation",
+    "stack-queue",
+    "baileys",
+    "mongodb"
+  ],
+  "author": "Stack Queue",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
+    "concurrently": "^10.0.6",
+    "cors": "^2.8.6",
+    "csv-parser": "^3.2.1",
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "mongoose": "^9.11.2",
+    "multer": "^2.4.0",
+    "pino": "^10.4.0",
+    "qrcode": "^1.5.4"
+  }
+}

@@ -1,0 +1,15 @@
+auth_session/
+node_modules/
+frontend/node_modules/
+mobile-app/node_modules/
+frontend/dist/
+mobile-app/.expo/
+mobile-app/android/
+mobile-app/ios/
+*.log
+eas_*.txt
+eas_*.log
+decompressed_*.txt
+*.apk
+uploads/
+tools/cloudflared.exe
