@@ -24,8 +24,8 @@ export function getDetectedHost() {
       return `http://${ip}:5000`;
     }
   }
-  // Fallback to current live LAN IP
-  return 'http://10.171.105.21:5000';
+  // Fallback to permanent 24/7 cloud server
+  return 'https://stackqueue-whatsapp.onrender.com';
 }
 
 export const DEFAULT_SERVER_URL = getDetectedHost();
@@ -34,12 +34,20 @@ let cachedServerUrl = DEFAULT_SERVER_URL;
 export async function initServerUrl() {
   const detected = getDetectedHost();
   try {
+    const isManual = await AsyncStorage.getItem(MANUAL_OVERRIDE_KEY);
     const saved = await AsyncStorage.getItem(SERVER_URL_KEY);
-    if (saved && (saved.startsWith('http://') || saved.startsWith('https://'))) {
+    
+    // Purge dead temporary quick tunnels (trycloudflare / localtunnel)
+    const isOldTunnel = saved && (saved.includes('trycloudflare.com') || saved.includes('loca.lt'));
+    
+    if (saved && isManual === 'true' && !isOldTunnel && (saved.startsWith('http://') || saved.startsWith('https://'))) {
       cachedServerUrl = saved;
     } else {
       cachedServerUrl = detected;
       await AsyncStorage.setItem(SERVER_URL_KEY, detected);
+      if (isOldTunnel) {
+        await AsyncStorage.removeItem(MANUAL_OVERRIDE_KEY);
+      }
     }
   } catch (e) {
     cachedServerUrl = detected;
@@ -94,12 +102,12 @@ async function request(path, options = {}) {
     clearTimeout(timeoutId);
     if (err.name === 'AbortError') {
       throw new Error(
-        `Backend server is not running or unreachable at ${url}.\nMake sure you ran start.bat (or start-backend.bat) on your PC!`
+        `Server took too long to respond at ${url}.\nPlease check your internet connection.`
       );
     }
     if (err.message && err.message.includes('Network request failed')) {
       throw new Error(
-        `Cannot reach ${url}.\nPlease ensure start.bat (or start-backend.bat) is running on your PC.`
+        `Cannot reach server at ${url}.\nPlease verify your internet connection or cloud service status.`
       );
     }
     throw err;

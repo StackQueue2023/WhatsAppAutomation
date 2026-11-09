@@ -43,7 +43,7 @@ export default function SettingsScreen({ status, onOpenQr, onLogout, onRefreshSt
       setConnectionStatus('error');
       Alert.alert(
         'Connection Failed',
-        err.message + '\n\nMake sure your PC and phone are on the exact same Wi-Fi network.'
+        err.message + '\n\nPlease check your internet connection or verify your 24/7 Cloud Server URL.'
       );
     } finally {
       setIsTesting(false);
@@ -59,7 +59,7 @@ export default function SettingsScreen({ status, onOpenQr, onLogout, onRefreshSt
       await setServerUrl(autoUrl);
       await API.getStatus();
       setConnectionStatus('connected');
-      Alert.alert('Auto-Detected!', `Connected to PC at ${autoUrl}`);
+      Alert.alert('Reset Complete', `Connected to server at ${autoUrl}`);
       onRefreshStatus();
     } catch (err) {
       setConnectionStatus('error');
